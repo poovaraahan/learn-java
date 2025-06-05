@@ -8,11 +8,12 @@ public class UserInput {
         System.out.print("How old are you? ");
         int age = input.nextInt();//reads an integer input from the user
         System.out.print("Wow, " + age + " years old? That's pretty young!\n");
+        input.nextLine(); // Consume the newline character left by nextInt()
         System.out.print("Name a hobby you enjoy:\n");
         String hobbies = input.nextLine(); 
         System.out.print("Oh, you like " + hobbies + "? Weirdo\n");
-        //The code doesnot work as expected because the nextLine() method is called after nextInt(),
-        // which leaves a newline character in the input buffer.
+        //It should work now.
+        input.close(); // One final fix, Close the scanner to prevent resource leaks
 
         
     }
