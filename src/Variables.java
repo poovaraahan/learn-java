@@ -1,10 +1,17 @@
 public class Variables {
     public static void main(String[] args){
-        boolean isJavaFun = true;// Boolean variable, one byte
-        char grade = 'A';// Character variable, any single character, two bytes
-        String greeting = "Hello, World!"; //String variable, sequence of characters
-        System.out.println("Is Java fun? " + isJavaFun);
-        System.out.println("Grade: " + grade);
-        System.out.println(greeting);
+        //Swapping two variables
+        String p = "Pikachu";
+        String q = "Piplup";
+        System.out.println("Before swapping: p = " + p + ", q = " + q);
+        p = q;
+        System.out.println("If we assign p = q, then p = " + p + ", q = " + q);
+        q = p;
+        System.out.println("If we assign q = p, then p = " + p + ", q = " + q);
+        String temp = null;
+        temp = p;
+        p = q;
+        q = temp;
+        System.out.println("After swapping: p = " + p + ", q = " + q);
     }
 }
