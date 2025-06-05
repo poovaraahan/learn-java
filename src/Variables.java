@@ -1,8 +1,7 @@
 public class Variables {
     public static void main(String[] args){
-        int x; // Declaration
-        x = 10; // Assignment
-        int y = 20; // Initialization = Declaration + Assignment
-        System.out.println("Integer value: " + x +y);//function to print variable
+        long a = 999999999999999999L; //can store large integers, L in the end necessary to indicate it's a long literal
+        System.out.println("Long value: " + a);// This will print the long value
+   
     }
 }
