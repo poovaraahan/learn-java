@@ -10,7 +10,7 @@ public class LogicOp {
         Scanner input = new Scanner(System.in);
         System.out.println("Let's Play. Press 'q' or 'Q' to quit."); // Prompts the user for input
         String choice = input.nextLine(); // Reads the user's input
-        if(choice.equals("q") || choice.equals("Q")){
+        if(!choice.equals("q") && !choice.equals("Q")){// Checks if the input is not 'q' or 'Q'
             System.out.println("Nama Jeichitom Mara!");
         }
         else{
