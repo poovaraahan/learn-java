@@ -4,7 +4,9 @@ public class Expressions {
         //values, variables, and constants are operands
         //operators : // +, -, *, /, %, ++, --, ==, !=, >, <, >=, <=, &&, ||, !
         int friends = 10; //int variable
-        friends = friends + 1; //incrementing the variable by 1
-        System.out.println("I have " + friends + " friends!"); //concatenation of string and variable
+        friends++; //incrementing the variable by 1
+        System.out.println("I have " + friends + " friends!"); 
+        friends += 5; //adding 5 to the variable
+        System.out.println("Now I have " + friends + " friends!");
     }
 }
