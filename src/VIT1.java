@@ -1,89 +1,86 @@
 import java.util.Scanner;
 /*
- * Problem Statement
+ Problem Statement
 
 
 
-John is a fitness trainer, and he wants to use the BMI calculator to assess the body mass index of his clients. He has a list of clients with their height (in meters) and weight (in kilograms). 
+Alice, an insurance agent, needs a program to calculate the insurance premium for her clients based on their age and health condition. 
 
 
 
-John plans to write a program to quickly determine the BMI and provide a classification for each client.
+The premium amount is determined by the following rules:
 
-If BMI is less than 18.5, the program will classify it as "Underweight"
-If BMI is between 18.6 and 24.9, the program will classify it as "Normal Weight"
-If BMI is between 25.0 and 29.9, the program will classify it as "Overweight"
-If BMI is 30.0 or higher, the program will classify it as "Obese"
+If the client's age is between 18 and 30 years:
+'excellent' health condition: 500.0
+'good' health condition: 700.0
+Any other health condition: 900.0
+If the client's age is between 31 and 50 years:
+'excellent' health condition: 700.0
+'good' health condition: 900.0
+Any other health condition: 1100.0
 
 
-Formula to calculate BMI = weight/(height*height)
+Write a program that takes the age and health condition of a client as input and outputs the corresponding insurance premium.
 
 Input format :
-The first line of input consists of a double value, representing the height of the person in meters.
+The first line of input contains an integer representing the age of the client.
 
-The second line consists of a double value, representing the weight of the person in kilograms.
+The second line contains a string representing the health condition of the client.
 
 Output format :
-The first line of output prints a double value, representing the BMI, rounded off to two decimal places.
-
-The second line prints the category they belong to.
+The output prints a double value, representing the insurance premium.
 
 
 
 Refer to the sample output for formatting specifications.
 
 Code constraints :
-In this scenario, the test cases fall under the following constraints:
-
-1.1 ≤ height ≤ 7.5
-
-1.1 ≤ weight ≤ 120.0
+Age input will be a positive integer. Health condition input will be a lowercase string.
 
 Sample test cases :
 Input 1 :
-1.2
-45.2
+25
+excellent
 Output 1 :
-BMI: 31.39
-Classification: Obese
+500.0
 Input 2 :
-5.5
-45.5
+31
+good
 Output 2 :
-BMI: 1.50
-Classification: Underweight
+900.0
 Input 3 :
-1.7
-68.3
+41
+poor
 Output 3 :
-BMI: 23.63
-Classification: Normal Weight
-Input 4 :
-1.6
-80.9
-Output 4 :
-BMI: 31.60
-Classification: Obese
+1100.0
  */
 public class VIT1{
        public static void main(String[] args){
         Scanner input = new Scanner(System.in);
-        double height = input.nextDouble();
-        double weight = input.nextDouble();
-        double BMI = (weight)/(height*height);
-        System.out.printf("BMI: %.2f\n", BMI);
-        if(BMI<18.5){
-            System.out.println("Classificationn: Underweight");
-        }
-        else if(BMI>=18.6&&BMI<=24.9){
-            System.out.println("Classification: Normal Weight");
-        }
-        else if(BMI>=25.0&&BMI<=29.9){
-            System.out.println("Classification: Overweight");
+        int age = input.nextInt();
+        input.nextLine();
+        String hc = input.nextLine();
+        if(age>18&&age<30){
+            if(hc.equals("excellent")){
+                System.out.print(500.0);
+            }
+            else if(hc.equals("good")){
+                System.out.print(700.0);
+            }
+            else{
+                System.out.print(900.0);
+            }
         }
         else{
-            System.out.println("Classification: Obese");
+            if(hc.equals("excellent")){
+                System.out.print(700.0);
+            }else if(hc.equals("good")){
+                System.out.print(900.0);
+            }else{
+                System.out.print(1100.0);
+            }
         }
         input.close();
     }
 }
+//Lookout for Syntax of scanners
