@@ -12,7 +12,10 @@ public class GUI {
         // Displays the rating in a dialog box.
         double money = Double.parseDouble(JOptionPane.showInputDialog("FBI open up! You are watching too much anime! (Bribe the officer with decimal money)"));
         //This is the procedure to get a double input from the user.
-        JOptionPane.showMessageDialog(null, + money + " dollars! Is that all you have (≖_≖)?");
+        JOptionPane.showMessageDialog(null, + money + " dollars? .·°՞(¯□¯)՞°·. Is that all you have (≖_≖)?" +
+                " Liar (｡•̀ ⤙ •́ ｡) !!! I'm not sorry, you chose this. Any last words?" +
+                "\n\n" +
+                "Just kidding, Goodbye, and one more thing. I am your father(╥‸╥)");
     } 
     
 }
