@@ -3,11 +3,9 @@ public class Expressions {
         //expressions: operands + operators
         //values, variables, and constants are operands
         //operators : // +, -, *, /, %, ++, --, ==, !=, >, <, >=, <=, &&, ||, !
-        double friends = 10; //double variable
-        friends = friends/3; //division operator
-        System.out.println("I have " + friends + " friends!");
-        //returns decimal value because of double type
+        int friends = 10; //int variable
+        friends = friends%4; //modulus operator
+        System.out.println("I have " + friends + " friends!");//returns remainder of 10/4
 
-   
     }
 }
