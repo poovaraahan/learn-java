@@ -1,86 +1,60 @@
 import java.util.Scanner;
 /*
- Problem Statement
+Problem Statement
 
 
 
-Alice, an insurance agent, needs a program to calculate the insurance premium for her clients based on their age and health condition. 
-
-
-
-The premium amount is determined by the following rules:
-
-If the client's age is between 18 and 30 years:
-'excellent' health condition: 500.0
-'good' health condition: 700.0
-Any other health condition: 900.0
-If the client's age is between 31 and 50 years:
-'excellent' health condition: 700.0
-'good' health condition: 900.0
-Any other health condition: 1100.0
-
-
-Write a program that takes the age and health condition of a client as input and outputs the corresponding insurance premium.
+James, a high school boy is assigned to find the sum of a three-digit number to find if the sum is greater than 12. Write a program to help him find the sum of the digits of the number and check if it is greater than 12.
 
 Input format :
-The first line of input contains an integer representing the age of the client.
-
-The second line contains a string representing the health condition of the client.
+The input consists of an integer N.
 
 Output format :
-The output prints a double value, representing the insurance premium.
+The first line of output prints "Sum: " followed by the sum of digits of N.
 
+The second line prints one of the following:
+
+If the sum of the digits of N is greater than 12, print "The sum of the digits is greater than 12"
+Else, print "The sum of the digits is not greater than 12"
 
 
 Refer to the sample output for formatting specifications.
 
 Code constraints :
-Age input will be a positive integer. Health condition input will be a lowercase string.
+The given test cases fall under the following constraints:
+
+100 ≤ N ≤ 999
 
 Sample test cases :
 Input 1 :
-25
-excellent
+129
 Output 1 :
-500.0
+Sum: 12
+The sum of the digits is not greater than 12
 Input 2 :
-31
-good
+576
 Output 2 :
-900.0
-Input 3 :
-41
-poor
-Output 3 :
-1100.0
+Sum: 18
+The sum of the digits is greater than 12
  */
 public class VIT1{
-       public static void main(String[] args){
+    public static void main(String[] args){
         Scanner input = new Scanner(System.in);
-        int age = input.nextInt();
-        input.nextLine();
-        String hc = input.nextLine();
-        if(age>18&&age<30){
-            if(hc.equals("excellent")){
-                System.out.print(500.0);
-            }
-            else if(hc.equals("good")){
-                System.out.print(700.0);
-            }
-            else{
-                System.out.print(900.0);
-            }
+        int N = input.nextInt();
+        int a = N%10;//Last digit
+        int b = (N/10)%10;//10s digit
+        int c = (N/100)%10;//Hundredths digit
+        int sum = a+b+c;
+        System.out.println("Sum: "+sum);
+        if(sum<=12){
+            System.out.println("The sum of the digits is not greater than 12");
+            
         }
         else{
-            if(hc.equals("excellent")){
-                System.out.print(700.0);
-            }else if(hc.equals("good")){
-                System.out.print(900.0);
-            }else{
-                System.out.print(1100.0);
-            }
+            System.out.println("The sum of the digits is greater than 12");
         }
         input.close();
     }
 }
+        
 //Lookout for Syntax of scanners
