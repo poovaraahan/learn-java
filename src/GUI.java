@@ -6,7 +6,13 @@ public class GUI {
         // Displays the message in a dialog box. You got to type it in.
         JOptionPane.showMessageDialog(null, "Arigato Kosaimasu, " + message + " Chan! ʕ•ᴥ•ʔﾉ♡");
         // Displays the response in a dialog box.
-        System.exit(0);
-    }
+        int rating = Integer.parseInt(JOptionPane.showInputDialog("On a scale of 1 to 10, how much do you like this program?"));
+        // .showInputDialog can only take String input, so we convert it to an integer, using Integer.parseInt()
+        JOptionPane.showMessageDialog(null, "Just " + rating + "? Ain't that too young? ( ͠° ͟ʖ ͡°)🔪");
+        // Displays the rating in a dialog box.
+        double money = Double.parseDouble(JOptionPane.showInputDialog("FBI open up! You are watching too much anime! (Bribe the officer with decimal money)"));
+        //This is the procedure to get a double input from the user.
+        JOptionPane.showMessageDialog(null, + money + " dollars! Is that all you have (≖_≖)?");
+    } 
     
 }
