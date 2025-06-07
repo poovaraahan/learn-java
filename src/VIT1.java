@@ -1,133 +1,90 @@
 import java.util.Scanner;
-/*
-Question No: 5
-Single File Programming Question
-Problem Statement
+/*Problem Statement
 
 
 
-Akash is tasked with developing a program that calculates and categorizes blood pressure based on the given systolic and diastolic readings. 
+A prominent real estate agency, 'EstatePro', is streamlining its customer service by automating lease calculations and payment method suggestions. As a software developer, your mission is to create a program that will calculate the total cost of leasing a property based on the monthly rent and the duration of the lease in months. 
 
 
 
-The program should use the following classifications:
+Additionally, provide payment method suggestions to the customers, using a 'switch-case' statement.
 
-Low Blood Pressure: Systolic < 90 mm Hg or Diastolic < 60 mm Hg
-Normal Blood Pressure: Systolic ≤ 120 mm Hg and Diastolic ≤ 80 mm Hg
-Prehypertension: Systolic ≤ 140 mm Hg and Diastolic ≤ 90 mm Hg
-Stage 1 Hypertension: Systolic ≤ 160 mm Hg and Diastolic ≤ 100 mm Hg
-Stage 2 Hypertension: Otherwise
-
-
-Write a program to assist Akash in computing and classifying blood pressure levels based on input readings. The program should use a 'switch-case' to deliver a tailored blood pressure category.
-
+If the total cost is less than or equal to 1000, suggest payment by cash or check.
+If the total cost is between 1000 and 5000 (inclusive), suggest payment by credit card.
+If the total amount is over 5000, suggest payment by bank transfer.
 Input format :
-The input consists of two space-separated integers, representing the systolic blood pressure value S and diastolic blood pressure value D, respectively.
+The first line of input consists of an integer, representing the monthly rent.
+
+The second line consists of an integer, representing the lease duration.
 
 Output format :
-The output displays "Blood Pressure Category: " followed by the blood pressure category based on the provided input.
+The first line of output prints an integer, representing the total cost of the lease.
+
+The second line prints the payment method suggestion.
 
 
 
 Refer to the sample output for the exact text and format.
 
 Code constraints :
-50 ≤ S, D ≤ 170
+1 ≤ monthly rent ≤ 10,000
+
+1 ≤ lease duration ≤ 36
 
 Sample test cases :
 Input 1 :
-50 85
+500
+12
 Output 1 :
-Blood Pressure Category: Low Blood Pressure
+Total Cost: 6000
+Payment Method Suggestion: Payment by bank transfer is recommended.
 Input 2 :
-112 70
+800
+3
 Output 2 :
-Blood Pressure Category: Normal Blood Pressure
+Total Cost: 2400
+Payment Method Suggestion: Payment by credit card is recommended.
 Input 3 :
-135 86
+150
+5
 Output 3 :
-Blood Pressure Category: Prehypertension
-Input 4 :
-145 98
-Output 4 :
-Blood Pressure Category: Stage 1 Hypertension
-Input 5 :
-170 110
-Output 5 :
-Blood Pressure Category: Stage 2 Hypertension
+Total Cost: 750
+Payment Method Suggestion: Payment by cash or check is recommended.
+Whitelist
+Set 1:
+switch-case
 */
 public class VIT1{
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
-        int s,d;
-        s = input.nextInt();
-        d = input.nextInt();
-        input.close();
-        if(s<90||d<60){
-            System.out.println("Blood pressure Category: Low Blood Pressure");
+        int rent = input.nextInt();
+        int duration = input.nextInt();
+        int totalCost = rent*duration;
+        System.out.println("Total Cost: "+totalCost);
+        String paymentMethod = null;
+        int category;
+        if(totalCost<=1000){
+            category = 1;
         }
-        else if(s<=120||d<=80){
-            System.out.println("Blood pressure Category: Normal Blood Pressure");
-        }
-        else if(s<=140||d<=90){
-            System.out.println("Blood pressure Category: Prehypertension");
-        }
-        else if(s<=160||d<=100){
-            System.out.println("Blood pressure Category: Stage 1 Hypertension");
+        if(totalCost>1000&&totalCost<=5000){
+            category = 2;
         }
         else{
-            System.out.println("Blood pressure Category: Stage 2 Hypertension");
-        }
-        
-    }
-}
-/*Expexted output employs switch cases. revisit required
-import java.util.Scanner;
-
-class BloodPressureCalculator {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        int systolic = scanner.nextInt();
-        int diastolic = scanner.nextInt();
-
-        int pulsePressure = systolic - diastolic;
-
-        int category;
-        if (systolic < 90 || diastolic < 60) {
-            category = 1;
-        } else if (systolic <= 120 && diastolic <= 80) {
-            category = 2;
-        } else if (systolic <= 140 && diastolic <= 90) {
             category = 3;
-        } else if (systolic <= 160 && diastolic <= 100) {
-            category = 4;
-        } else {
-            category = 5;
         }
-
-        System.out.print("Blood Pressure Category: ");
-
-        switch (category) {
+        //Still getting if statements and switch clauses mixed up. Practice switch
+        switch(category){
             case 1:
-                System.out.println("Low Blood Pressure");
+                paymentMethod = "Payment by cash or check is recommended.";
                 break;
             case 2:
-                System.out.println("Normal Blood Pressure");
+                paymentMethod = "Payment by credit card is recommended.";
                 break;
             case 3:
-                System.out.println("Prehypertension");
+                paymentMethod = "Payment by bank transfer is recommended.";
                 break;
-            case 4:
-                System.out.println("Stage 1 Hypertension");
-                break;
-            case 5:
-                System.out.println("Stage 2 Hypertension");
-                break;
-            
         }
-
-        scanner.close();
+        System.out.println("Payment method suggestion: " + paymentMethod);
+        input.close();
     }
 }
- */
