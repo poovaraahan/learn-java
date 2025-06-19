@@ -1,20 +1,35 @@
 import java.util.ArrayList;
 public class Array {
     public static void main(String[] args){
-        //Array list is a resizable array implementation in Java
-        //Elements can be added or removed after compilation
-        //store referece data types
-        ArrayList<String>pokemon = new ArrayList<String>();//() is used to create an object
-        pokemon.add("Pikachu");
-        pokemon.add("Bulbasaur");
-        pokemon.add("Charmander");
-        pokemon.add("Squirtle");
-        pokemon.set(1, "Eevee"); //set() is used to replace an element at a specific index
-        pokemon.remove(2); //remove() is used to delete an element at a specific index
-        pokemon.clear(); //clear() is used to remove all elements from the ArrayList
-        for(int i = 0; i < pokemon.size(); i++) {//used size() instead of length
-            System.out.println(pokemon.get(i));//get() is used to access elements in an ArrayList
-        }
+        /*
+         * Here’s a quick comparison between Array and ArrayList in Java:
+
+Feature	    Array	                     ArrayList
+Size	    Fixed(set at creation)	     Dynamic (can grow/shrink)
+Syntax	    int[] arr = new int[5];	     ArrayList<Integer> list = new ArrayList<>();
+Type	    Can store primitives/objects Can only store objects (not primitives)
+Performance	Faster (less overhead)	     Slightly slower (more flexible)
+Methods	    No built-in methods 	     Has methods like add(), remove(), get()
+Import    	No	                         Yes (import java.util.ArrayList;)
+ExampleUse	arr[0]	                     list.get(0)
+         */
+        ArrayList<String> Ash = new ArrayList<>();
+        Ash.add("Pikachu");
+        Ash.add("Charizard");
+        Ash.add("Tepig");
+        ArrayList<String> Misty = new ArrayList<>();
+        Misty.add("Psyduck");
+        Misty.add("Starmie");
+        Misty.add("Togepi");
+        ArrayList<String> Brock = new ArrayList<>();
+        Brock.add("Onix");
+        Brock.add("Vulpix");
+        ArrayList<ArrayList<String>> pokemon = new ArrayList<>();
+        pokemon.add(Ash);
+        pokemon.add(Misty);
+        pokemon.add(Brock);
+        System.out.println(pokemon);
+
         
     }
 }
