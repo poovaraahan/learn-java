@@ -8,7 +8,10 @@ public class Array {
         pokemon[3] = "Squirtle";
         pokemon[4] = "Jigglypuff";
         pokemon[5] = "Meowth";
-        System.out.println(pokemon[5]);  
+        for(int i = 0; i < pokemon.length; i++) {
+            System.out.println(pokemon[i]);
+        }
+        //Prints the entire array
     }
     
 }
