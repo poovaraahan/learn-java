@@ -28,9 +28,10 @@ ExampleUse	arr[0]	                     list.get(0)
         pokemon.add(Ash);
         pokemon.add(Misty);
         pokemon.add(Brock);
-        System.out.println(pokemon);
+        System.out.println(pokemon.get(0));
+        System.out.println(pokemon.get(1).get(2));
+        System.out.println(pokemon.get(2).get(1));
 
-        
     }
 }
 
