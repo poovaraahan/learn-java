@@ -1,17 +1,32 @@
 public class methods {
     public static void main(String[] args){
-        //A  method is a block of code executed when called within the main function
-        //Basically functions like the python def function
-        int a = 5;
-        int b = 7;
-        //Note that return doesn't automatically print the value, it can only store the value to its memory
-        int c = add(a,b);//c in the main function and the method are independent of each other -local variable
-        System.out.println(c); 
-        //OR System.out.println(add(a,b));     
+        //Method signature: No.of parameters||Datatype of parameters||Name of the method
+        //Overloaded methods: Methods of the same name defined for a varying set of parameters over and over again
+    System.out.println(add(1,8));
+    System.out.println(add(1,8,9));
+    System.out.println(add(1.9,2.7,5.7));
+    String a = "Poo";
+    String b = "varaahan";
+    add(a,b);
+
     }
     static int add(int a, int b){
-        int c = a + b;
-        return c;
-        //OR return a+b;
+        System.out.println("Overloaded method 1");
+        return a+b;
     }
+    static int add(int a, int b, int c){
+        System.out.println("Overloaded method 2");
+        return a+b+c;
+    }
+    static double add(double a, double b, double c){
+        System.out.println("Overloaded method 3");
+        return a+b+c;
+    }
+    static void add(String a, String b) {
+        System.out.println("Overloaded method 4");
+        String c = a + b;
+        System.out.println(c);
+    }
+
+
 }
