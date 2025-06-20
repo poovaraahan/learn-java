@@ -35,6 +35,9 @@ public class printf_final_var {
 		// , : comma grouping separator if numbers > 1000
 		
 		System.out.printf("You have this much money %,f\n",myDouble);
+
+        final double pi = 3.14159;
+        System.out.println(pi);
 	}
     
 }
