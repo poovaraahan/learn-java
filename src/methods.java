@@ -2,13 +2,16 @@ public class methods {
     public static void main(String[] args){
         //A  method is a block of code executed when called within the main function
         //Basically functions like the python def function
-        String name = "Bonobo";
-        int age = 666;
-        hello(name, age);
-        //Variables being declared in the main function must also be declared as parameters within the methods
-        
+        int a = 5;
+        int b = 7;
+        //Note that return doesn't automatically print the value, it can only store the value to its memory
+        int c = add(a,b);//c in the main function and the method are independent of each other -local variable
+        System.out.println(c); 
+        //OR System.out.println(add(a,b));     
     }
-    static void hello(String name, int age){//declare variable parameter with datatype
-        System.out.println("homiesexual " + name+". I am "+age+" years old");
+    static int add(int a, int b){
+        int c = a + b;
+        return c;
+        //OR return a+b;
     }
 }
