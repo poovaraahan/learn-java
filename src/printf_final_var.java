@@ -37,6 +37,7 @@ public class printf_final_var {
 		System.out.printf("You have this much money %,f\n",myDouble);
 
         final double pi = 3.14159;
+        //final keyword ensures the value of the variable can never be updated
         System.out.println(pi);
 	}
     
