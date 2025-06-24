@@ -4,14 +4,22 @@ public class Pokemon {
     String type;
     int generation;
     double weight;
-    
+    String attack;
+    String battlecry;
     //CONSTRUCTOR: A method called when new instance/onject derived from class
 
-    Pokemon(String name, String type, int generation, double weight){ //Parameters
+    Pokemon(String name, String type, int generation, double weight, String attack, String battlecry){ //Parameters
         this.name = name;
         this.type = type;
         this.generation = generation;
         this.weight = weight;
+        this.attack = attack;
+        this.battlecry = battlecry;
+    }
+    void combat(){
+        System.out.println(name+", use "+attack+"!");
+        System.out.println(battlecry);
+
     }
     //It is the syntax to assing the values appropriated for each object
     //this.attribute = parameter
