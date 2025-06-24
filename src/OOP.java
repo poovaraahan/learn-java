@@ -11,8 +11,15 @@ public class OOP {
         System.out.println(myPokemon.weight);
         myPokemon.thunderbolt();
         myPokemon.electroball();
-        // myPokemon = instance name 
-        // .method(parameters)/.variable attribute = syntax to import the var/meth from parent class
-
+        // CREATING ANOTHER INSTANCE FOR THE SAME CLASS
+        Pokemon myPokemon2 = new Pokemon(); // created an instance for the class Pokemon 
+        System.out.println(myPokemon2.name);
+        System.out.println(myPokemon2.type);
+        System.out.println(myPokemon2.generation);
+        System.out.println(myPokemon2.weight);
+        myPokemon2.thunderbolt();
+        myPokemon2.electroball();
+        //Notice that the same block of code is executed twice as they inherit from the same blueprint or class
+        
     }
 }
