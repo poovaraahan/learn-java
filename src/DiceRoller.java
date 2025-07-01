@@ -9,10 +9,10 @@ public class DiceRoller {
     DiceRoller() {
         Random random = new Random(); // creating an instance of the Random class
         int number = 0;
-        roll(); // calling the method roll declared below
+        roll(random, number); // calling the method roll declared below
     }
 
-    void roll() {
+    void roll(Random random, int number) {
         number = random.nextInt(6) + 1; // generates a random number between 1 and 6
         System.out.println("You rolled a " + number);
     }
