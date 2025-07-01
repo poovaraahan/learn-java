@@ -1,18 +1,16 @@
 import java.util.Random;
 public class DiceRoller {
-    // local variable = variable declared inside a method, constructor or block
-    // visible only within that method, constructor or block
     // global variable = variable declared outside any method, constructor or block
     // visible to all methods, constructors and blocks in the class
-
-
+    
+    Random random; // creating an instance of the Random class
+    int number;
     DiceRoller() {
-        Random random = new Random(); // creating an instance of the Random class
-        int number = 0;
-        roll(random, number); // calling the method roll declared below
+        random = new Random();// initializing the random instance
+        roll(); // calling the method roll declared below
     }
 
-    void roll(Random random, int number) {
+    void roll() {
         number = random.nextInt(6) + 1; // generates a random number between 1 and 6
         System.out.println("You rolled a " + number);
     }
