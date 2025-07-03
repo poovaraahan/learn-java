@@ -12,4 +12,8 @@ public class hero extends human {
         return super.toString()+this.power; // calling the toString method of the parent class human
         // It returns the name and age from the parent class and appends the power from the child class
     }
-}
+}/*
+Basically, allows to inherit properties and methods from the parent class human
+while adding new properties and methods specific to the hero class.
+
+ */
