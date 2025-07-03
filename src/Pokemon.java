@@ -6,8 +6,7 @@ public class Pokemon {
     double weight;
     String attack;
     String battlecry;
-    //CONSTRUCTOR: A method called when new instance/onject derived from class
-
+    //OVERLOADED CONSTRUCTOR: Different constructors can be created with different number of parameters
     Pokemon(String name, String type, int generation, double weight, String attack, String battlecry){ //Parameters
         this.name = name;
         this.type = type;
@@ -16,13 +15,21 @@ public class Pokemon {
         this.attack = attack;
         this.battlecry = battlecry;
     }
+    Pokemon(String name, String type, int generation, double weight){//Parameters
+        this.name = name;
+        this.type = type;
+        this.generation = generation;
+        this.weight = weight;
+    }
+    Pokemon(String name, String type){ //Parameters
+        this.name = name;
+        this.type = type;
+    }
     void combat(){
         System.out.println(name+", use "+attack+"!");
         System.out.println(battlecry);
 
     }
-    //It is the syntax to assing the values appropriated for each object
-    //this.attribute = parameter
-    //name (without this.) refers to the parameter passed to the constructor.
-    //Parameter: Temporary variable used to pass a value into a method or constructor 
+    //Overloaded methods can be created with different number of parameters
+    //Thus, an instance of the class lacking attributes can still be created 
 }

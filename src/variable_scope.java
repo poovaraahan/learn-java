@@ -8,3 +8,4 @@ public class variable_scope {
         DiceRoller diceRoller = new DiceRoller(); // creating an instance of the DiceRoller class
     }
 }
+

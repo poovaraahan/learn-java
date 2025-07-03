@@ -9,20 +9,15 @@ public class OOP {
         System.out.println(myPokemon.weight);
         myPokemon.combat();
         // CREATING ANOTHER INSTANCE FOR THE SAME CLASS
-        Pokemon myPokemon2 = new Pokemon("Bulbasaur", "Grass/Poison",1,6.9, "vine whip", "Saurrr!"); // created an instance for the class Pokemon 
+        Pokemon myPokemon2 = new Pokemon("Bulbasaur", "Grass/Poison",1,6.9);// This instance does not have all the attributes, but it is still valid
         System.out.println(myPokemon2.name);
         System.out.println(myPokemon2.type);
         System.out.println(myPokemon2.generation);
         System.out.println(myPokemon2.weight);
-        myPokemon2.combat();
         // CREATING ANOTHER INSTANCE FOR THE SAME CLASS
-        Pokemon myPokemon3 = new Pokemon("Chikorita", "Grass",2,6.4,"razor leaf", "Chiko!"); // created an instance for the class Pokemon 
+        Pokemon myPokemon3 = new Pokemon("Chikorita", "Grass");// This instance does not have all the attributes, but it is still valid
         System.out.println(myPokemon3.name);
         System.out.println(myPokemon3.type);
-        System.out.println(myPokemon3.generation);
-        System.out.println(myPokemon3.weight);
-        myPokemon3.combat();
-        //
         
     }
 }
