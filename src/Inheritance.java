@@ -6,5 +6,7 @@ public class Inheritance {
         myCar.go(); // calling the method from the parent class vehicle
         bike myBike = new bike();
         myBike.stop(); // calling the method from the parent class vehicle
+        System.out.println("My car speed is: " + myCar.speed);
+        System.out.println("My bike speed is: " + myBike.speed);
     }
 }
