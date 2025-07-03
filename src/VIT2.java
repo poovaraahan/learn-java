@@ -3,69 +3,67 @@ public class VIT2 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int n = input.nextInt();
-        int sum = 0;
-        for(int i = 1; i<=n/2; i++){
-            if(n%i == 0){
-                sum = sum + i;
-            }
+        int EvenSum = 0;
+        int OddSum = 0; 
+        if(n <= 0) {
+            System.out.println("Please enter a positive integer");
+            input.close();
+            return; // Exit the program if n is not positive
         }
-        if(sum == n){
-            System.out.printf("%d is a perfect number", n);
-        }
-        else{
-            System.out.printf("%d is not a perfect number", n);
-        }
-        input.close();
-        /*OR
-        public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int n = input.nextInt();
-        int sum = 0;
-        int i = 1;
-        do{
-            if(n%i == 0){
-                sum = sum + i;
-            }
-            i++;
-        }while(i<=n/2);
-        if(sum == n){
-            System.out.printf("%d is a perfect number", n);
-        }
-        else{
-            System.out.printf("%d is not a perfect number", n);
-        }
-        input.close();
-         */
         
+        for(int i = 1; i<=n; i++){
+            if(i%2==0){
+                EvenSum  = EvenSum + i;
+            }
+            else{
+                OddSum = OddSum + i;
+            }
+        }
+        System.out.printf("Sum of even numbers from 1 to %d: %d\n",n,EvenSum);
+        System.out.printf("Sum of odd numbers from 1 to %d: %d\n",n,OddSum);
+        input.close();
     }
 }
 /*
         * Problem Statement
 
-        Anil is fascinated by the concept of perfect numbers. A perfect number is a positive integer that is equal to the sum of its proper divisors, excluding itself. For example, 28 is a perfect number because its divisors (excluding itself) are 1, 2, 4, 7, 14, and their sum is 28.
-        Anil wants to create a program that determines whether a given positive integer is a perfect number or not. He needs your help to design and implement this program using a do-while loop.
+
+
+        John is learning to program, and he wants to create a program that calculates the sum of even and odd numbers within a range. He needs your help to design and implement this program.
+
+
+
+        Write a program called "EvenOddSumCalculator" that takes a positive integer n as input and calculates and displays the sum of even numbers and the sum of odd numbers from 1 to n.
 
         Input format :
-        The input consists of a single positive integer n.
+        The input consists of a single positive integer, n.
 
         Output format :
-        If n is a perfect number, print "n is a perfect number".
-        If n is not a perfect number, print "n is not a perfect number".
+        If the input value is not a positive integer, the output displays the message, "Please enter a positive integer".
+
+        If the input value is a positive integer, the output displays the following format:
+
+        "Sum of even numbers from 1 to n: evenSum" (where evenSum is the sum of even numbers from 1 to n).
+
+        "Sum of odd numbers from 1 to n: oddSum" (where oddSum is the sum of odd numbers from 1 to n).
 
 
 
-        Refer to the sample output for formatting specifications.
+        Refer to the sample output for the formatting specifications.
 
         Code constraints :
-        1 ≤ n ≤ 105
+        The test cases will fall under the following constraints:
+
+        1 ≤ n ≤ 150
 
         Sample test cases :
         Input 1 :
-        50
+        5
         Output 1 :
-        50 is not a perfect number
+        Sum of even numbers from 1 to 5: 6
+        Sum of odd numbers from 1 to 5: 9
         Input 2 :
-        28
+        -6
         Output 2 :
-        28 is a perfect number
+        Please enter a positive integer
  */
