@@ -1,69 +1,62 @@
 import java.util.Scanner;
 public class VIT2 {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int n = input.nextInt();
-        int EvenSum = 0;
-        int OddSum = 0; 
-        if(n <= 0) {
-            System.out.println("Please enter a positive integer");
-            input.close();
-            return; // Exit the program if n is not positive
-        }
-        
-        for(int i = 1; i<=n; i++){
-            if(i%2==0){
-                EvenSum  = EvenSum + i;
-            }
-            else{
-                OddSum = OddSum + i;
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int n = scanner.nextInt();
+            scanner.close();
+
+            if (isPalindrome(n)) {
+                System.out.println(n + " is a palindrome");
+            } else {
+                System.out.println(n + " is not a palindrome");
             }
         }
-        System.out.printf("Sum of even numbers from 1 to %d: %d\n",n,EvenSum);
-        System.out.printf("Sum of odd numbers from 1 to %d: %d\n",n,OddSum);
-        input.close();
+
+       public static boolean isPalindrome(int num) {
+        int original = num;      // Store the original number for comparison later
+        int reversed = 0;        // Initialize reversed number to 0
+
+        while (num > 0) {        // Loop until num becomes 0
+            int digit = num % 10;    // Extract the last digit of num
+            reversed = reversed * 10 + digit;  // Append the digit to reversed
+            num /= 10;           // Remove the last digit from num
+        }
+        return original == reversed;  // Check if original and reversed are equal
     }
 }
 /*
         * Problem Statement
 
+        Emily, an aspiring programmer, is exploring the concept of palindromic numbers. A palindromic number is an integer that reads the same backward as forward. 
 
-
-        John is learning to program, and he wants to create a program that calculates the sum of even and odd numbers within a range. He needs your help to design and implement this program.
-
-
-
-        Write a program called "EvenOddSumCalculator" that takes a positive integer n as input and calculates and displays the sum of even numbers and the sum of odd numbers from 1 to n.
+        For example:
+        121121121 and 123211232112321 are palindromes, while 123123123 is not. 
+        
+        Emily wants to create a program that determines whether a given integer is a palindrome. Your task is to write a program that helps Emily by checking if a given integer is a palindrome.
 
         Input format :
-        The input consists of a single positive integer, n.
+        The input consists of an single integer n.
 
         Output format :
-        If the input value is not a positive integer, the output displays the message, "Please enter a positive integer".
+        The output displays the following format:
 
-        If the input value is a positive integer, the output displays the following format:
+        If the number is a palindrome, print: "{number} is a palindrome".
 
-        "Sum of even numbers from 1 to n: evenSum" (where evenSum is the sum of even numbers from 1 to n).
-
-        "Sum of odd numbers from 1 to n: oddSum" (where oddSum is the sum of odd numbers from 1 to n).
-
-
+        If the number is not a palindrome, print: "{number} is not a palindrome".
 
         Refer to the sample output for the formatting specifications.
 
         Code constraints :
-        The test cases will fall under the following constraints:
-
-        1 ≤ n ≤ 150
+        1 ≤ n ≤104
 
         Sample test cases :
         Input 1 :
-        5
+        12321
         Output 1 :
-        Sum of even numbers from 1 to 5: 6
-        Sum of odd numbers from 1 to 5: 9
+        12321 is a palindrome
+        
         Input 2 :
-        -6
+        1245
         Output 2 :
-        Please enter a positive integer
+        1245 is not a palindrome
  */
