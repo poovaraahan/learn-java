@@ -5,6 +5,12 @@ public class myInfo {
     String language = "Tamil";
     int height = 170; 
     int weight = 65;
-    
-
+    public String toString() {
+        String myString = name+"\n"+age+"\n"+country+"\n"+language+"\n"+height+"\n"+weight;
+        return myString;
+        /*
+         * OR
+         * return name+"\n"+age+"\n"+country+"\n"+language+"\n"+height+"\n"+weight;
+         */
+    }
 }
