@@ -1,0 +1,10 @@
+public class Inheritance {
+    public static void main(String[] args){
+        //Inheritance: aquiring the attributes and methods of another class
+        //In Java, inheritance is implemented using the 'extends' keyword.
+        car myCar = new car();
+        myCar.go(); // calling the method from the parent class vehicle
+        bike myBike = new bike();
+        myBike.stop(); // calling the method from the parent class vehicle
+    }
+}
