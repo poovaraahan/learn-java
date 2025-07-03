@@ -8,5 +8,7 @@ public class Inheritance {
         myBike.stop(); // calling the method from the parent class vehicle
         System.out.println("My car speed is: " + myCar.speed);
         System.out.println("My bike speed is: " + myBike.speed);
+        System.out.println("My car has " + myCar.wheels + " wheels and " + myCar.doors + " doors.");
+        System.out.println("My bike has " + myBike.wheels + " wheels and " + myBike.pedals + " pedals.");
     }
 }
