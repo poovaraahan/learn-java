@@ -5,9 +5,8 @@ public class staticModifiers {
         namelist student1 = new namelist("Poovaraahan");
         namelist student2 = new namelist("Srihari");
         namelist student3 = new namelist("Sujan");
-        System.out.println(namelist.numberOfStudents);
-        //The static variable numberOfStudents is shared among all instances of the namelist class.
-        //It keeps track of the total number of students created.
+        namelist.displayStudentCount(); // Display the total number of students created
+        //static methods can be called without creating an instance of the class
     }
 
 }
