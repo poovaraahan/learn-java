@@ -2,13 +2,11 @@ public class encapsulation {
     public static void main(String[] args) {
         encap_car myCar = new encap_car("BMW", "Black", 2020);
         encap_car myCar2 = new encap_car("Mercedes", "White", 2022);
-        //Object copying: Directly assigning one object to another
-        myCar2 = myCar;
+        //Copy method:
+        myCar2.copy(myCar);
         //Print Addresses of the objects
         System.out.println(myCar);
         System.out.println(myCar2+"\n");
-        //Object copying: Directly assigning one object to another
-        myCar2 = myCar;
         //Printing the attributes of myCar using the get methods
         System.out.println(myCar.getModel());
         System.out.println(myCar.getColor());

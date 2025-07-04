@@ -32,4 +32,15 @@ public class encap_car {
     public void setYear(int year) {
         this.year = year;
     }
+    public void copy(encap_car car) {
+        //Copy method to copy the attributes of another encap_car object
+        this.setModel(car.getModel());
+        /*
+         * car.getModel() → gets the model from the car object passed in.
+         * this.setModel(...) → sets the model of the current object.
+         * The value from car is assigned to the current object.
+         */
+        this.setColor(car.getColor());
+        this.setYear(car.getYear());
+    }
 }
