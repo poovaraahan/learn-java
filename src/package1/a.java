@@ -3,9 +3,8 @@ import package2.*;
 public class a {
     public static void main(String[] args){
         c classC = new c();
-        System.out.println(classC.defaultMessage);
-        //Compilation Error: 
-        //defaultMessage has default access in package2.c and cannot be accessed from outside its package
+        System.out.println(classC.publicMessage);
+        //No error here because publicMessage is accessible everywhere
     }
 }
 
