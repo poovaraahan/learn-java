@@ -1,13 +1,8 @@
 package package1;
 import package2.*;
 public class a {
-    public static void main(String[] args){
-        c classC = new c();
-        System.out.println(classC.publicMessage);
-        //No error here because publicMessage is accessible everywhere
-    }
+    protected String protectedMessage = "Protected Access Modifier"; // This variable is accessible within the same package and subclasses
 }
-
 //Access Modifiers
 /*
  * public: Accessible everywhere
