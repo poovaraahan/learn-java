@@ -10,6 +10,11 @@ public class encap_car {
         this.setColor(color);
         this.setYear(year);
     }
+    //Copy constructor: Overloaded constructor that takes another encap_car object as a parameter
+    encap_car(encap_car x) {
+        //Copy constructor: initializes the attributes using another encap_car object
+        this.copy(x);
+    }
     //As you know, private attributes cannot be accessed directly outside the class.
     //So, we provide public methods to access and modify them.
     public String getModel() {
