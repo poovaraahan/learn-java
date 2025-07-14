@@ -1,20 +1,32 @@
 package polymorphism;
-
+import java.util.Scanner;
 public class mains {
     public static void main(String[] args) {
-        // Example usage of polymorphism
-        car myCar = new car();
-        bike myBike = new bike();
-        boat myBoat = new boat();
-        vehicle[] racers = {myCar, myBike, myBoat};// Array of vehicle type, though it contains different types of vehicles
-        for(vehicle x : racers) {// Loop through each vehicle in the array
-            // Call the accelerate and brake methods on each vehicle
-            x.accelerate();
-            x.brake();
+        vehicle myVehicle;
+        System.out.println("Enter the type of vehicle (car = 1, boat = 2,  bike = 3): ");
+        Scanner scanner = new Scanner(System.in);
+        int choice = scanner.nextInt();
+        if(choice == 1) {
+            myVehicle = new car();
+            myVehicle.accelerate();
+            myVehicle.brake();
+        } else if(choice == 2) {
+            myVehicle = new boat();
+            myVehicle.accelerate();
+            myVehicle.brake();
+        } else if(choice == 3) {
+            myVehicle = new bike();
+            myVehicle.accelerate();
+            myVehicle.brake();
+        } else {
+            System.out.println("Invalid choice, defaulting to car.");
+            myVehicle = new car();
+            myVehicle.accelerate();
+            myVehicle.brake();
         }
+        scanner.close();
+        // You can add more functionality or tests here if needed
+
     }
-    
 }
-//Polymorphism: Ability of object to identify as more than one type
-//During inheritance, the type of class is exchanged with the type of parent class, and vice versa.
-//This allows us to use the same method name for different classes, and the correct method will be called based on the object type at runtime.
+
