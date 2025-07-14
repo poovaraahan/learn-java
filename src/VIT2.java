@@ -1,70 +1,73 @@
 import java.util.Scanner;
 public class VIT2 {
-    public static void main(String[] args) {
+    public static void main(String args[]) {
         Scanner input = new Scanner(System.in);
-        int a = input.nextInt();
-        int arr[] = new int[a];
-        for (int i = 0; i < a; i++) {
-            arr[i] = input.nextInt();  // Removed "int" from this line
-            if (arr[i] % 3 == 0 && arr[i] % 5 == 0) {
-                System.out.print("Fizzbuzz\t");
-            } else if (arr[i] % 3 == 0) {
-                System.out.print("Fizz\t");
-            } else if (arr[i] % 5 == 0) {
-                System.out.print("Buzz\t");
-            } else {
-                System.out.print(arr[i] + "\t");  // Added tab for consistent formatting
+        int r = input.nextInt();
+        int c = input.nextInt();
+        int arr[][] = new int[r][c];
+        
+        // Read the matrix
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                arr[i][j] = input.nextInt();
             }
         }
-        input.close();  // Good practice to close the Scanner
+        
+        int x = input.nextInt(); // Read the cutoff age
+        int count = 0;
+        
+        // Calculate row averages and count those > x
+        for (int i = 0; i < r; i++) {
+            int sum = 0;
+            for (int j = 0; j < c; j++) {
+                sum += arr[i][j];
+            }
+            double average = (double) sum / c;
+            if (average > x) {
+                count++;
+            }
+        }
+        
+        System.out.println(count);
+        input.close();
     }
 }
 /*
- * Problem Statement
+ * 
+The Pan Am 73 flight from Bombay to New York, en route to Karachi and Frankfurt, was hijacked by a few Palestinian terrorists at the Karachi International Airport. The senior flight purser, Neerja Banhot, withered her fear and helped evacuate the passengers on board.
 
-
-
-Rohan is a software developer working on a program to print a sequence of numbers based on certain conditions. He needs to implement a "FizzBuzz" logic, which prints "Fizz" for numbers divisible by 3, "Buzz" for numbers divisible by 5, and "FizzBuzz" for numbers divisible by both 3 and 5. For all other numbers, it should print the number itself. 
-
-
-
-Can you help Rohan write a program to achieve this?
+Neerja planned to evacuate the passengers in rows that had an average age greater than x. Given r is the number of rows, c is the number of columns, and a list of integers representing the ages of passengers, can you find the number of rows with an average age greater than x?
 
 Input format :
-The first line contains an integer 'n', representing the number of elements in the array.
+The first line of input consists of an integer r, corresponding to the number of rows of seats in the aircraft.
 
-The second line contains 'n' space-separated integers, representing the elements of the array.
+The second line of input consists of an integer c, corresponding to the number of seats in a row.
+
+The third line of input consists of a collection of integers that correspond to the ages of passengers.
+
+The fourth line of input is an integer x corresponding to the cut-off age.
 
 Output format :
-The program prints 'n' space-separated results.
-
-If the i-th element in the array is divisible by both 3 and 5, print "FizzBuzz".
-
-If it is divisible by 3, print "Fizz".
-
-If it is divisible by 5, print "Buzz".
-
-For all other elements, print the number itself.
+The output displays an integer corresponding to t, the number of rows with an average age greater than x.
 
 
 
-Refer to the sample output for format specifications.
+Refer to the sample input and output for format specifications.
 
 Code constraints :
-1 ≤ n ≤100.
+1 ≤ r ≤ 100
 
-1 ≤ elements ≤ 100.
+1 ≤ c ≤ 100
+
+0 ≤ cut-off age ≤ 100.
 
 Sample test cases :
 Input 1 :
-10
-1 3 4 5 6 7 9 10 15 30
-Output 1 :
-1 Fizz 4 Buzz Fizz 7 Fizz Buzz FizzBuzz FizzBuzz 
-Input 2 :
-10
-1 2 4 17 7 8 11 13 14 16
-Output 2 :
-1 2 4 17 7 8 11 13 14 16 
+4
+5
+23 34 45 56 67
+98 78 65 78 90
+85 76 98 1 2
+5 6 7 8 9
+25
  */
-    
