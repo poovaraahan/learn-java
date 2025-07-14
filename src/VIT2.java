@@ -1,62 +1,70 @@
 import java.util.Scanner;
 public class VIT2 {
-        public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
-            int n = scanner.nextInt();
-            scanner.close();
-
-            if (isPalindrome(n)) {
-                System.out.println(n + " is a palindrome");
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int a = input.nextInt();
+        int arr[] = new int[a];
+        for (int i = 0; i < a; i++) {
+            arr[i] = input.nextInt();  // Removed "int" from this line
+            if (arr[i] % 3 == 0 && arr[i] % 5 == 0) {
+                System.out.print("Fizzbuzz\t");
+            } else if (arr[i] % 3 == 0) {
+                System.out.print("Fizz\t");
+            } else if (arr[i] % 5 == 0) {
+                System.out.print("Buzz\t");
             } else {
-                System.out.println(n + " is not a palindrome");
+                System.out.print(arr[i] + "\t");  // Added tab for consistent formatting
             }
         }
-
-       public static boolean isPalindrome(int num) {
-        int original = num;      // Store the original number for comparison later
-        int reversed = 0;        // Initialize reversed number to 0
-
-        while (num > 0) {        // Loop until num becomes 0
-            int digit = num % 10;    // Extract the last digit of num
-            reversed = reversed * 10 + digit;  // Append the digit to reversed
-            num /= 10;           // Remove the last digit from num
-        }
-        return original == reversed;  // Check if original and reversed are equal
+        input.close();  // Good practice to close the Scanner
     }
 }
 /*
-        * Problem Statement
+ * Problem Statement
 
-        Emily, an aspiring programmer, is exploring the concept of palindromic numbers. A palindromic number is an integer that reads the same backward as forward. 
 
-        For example:
-        121121121 and 123211232112321 are palindromes, while 123123123 is not. 
-        
-        Emily wants to create a program that determines whether a given integer is a palindrome. Your task is to write a program that helps Emily by checking if a given integer is a palindrome.
 
-        Input format :
-        The input consists of an single integer n.
+Rohan is a software developer working on a program to print a sequence of numbers based on certain conditions. He needs to implement a "FizzBuzz" logic, which prints "Fizz" for numbers divisible by 3, "Buzz" for numbers divisible by 5, and "FizzBuzz" for numbers divisible by both 3 and 5. For all other numbers, it should print the number itself. 
 
-        Output format :
-        The output displays the following format:
 
-        If the number is a palindrome, print: "{number} is a palindrome".
 
-        If the number is not a palindrome, print: "{number} is not a palindrome".
+Can you help Rohan write a program to achieve this?
 
-        Refer to the sample output for the formatting specifications.
+Input format :
+The first line contains an integer 'n', representing the number of elements in the array.
 
-        Code constraints :
-        1 ≤ n ≤104
+The second line contains 'n' space-separated integers, representing the elements of the array.
 
-        Sample test cases :
-        Input 1 :
-        12321
-        Output 1 :
-        12321 is a palindrome
-        
-        Input 2 :
-        1245
-        Output 2 :
-        1245 is not a palindrome
+Output format :
+The program prints 'n' space-separated results.
+
+If the i-th element in the array is divisible by both 3 and 5, print "FizzBuzz".
+
+If it is divisible by 3, print "Fizz".
+
+If it is divisible by 5, print "Buzz".
+
+For all other elements, print the number itself.
+
+
+
+Refer to the sample output for format specifications.
+
+Code constraints :
+1 ≤ n ≤100.
+
+1 ≤ elements ≤ 100.
+
+Sample test cases :
+Input 1 :
+10
+1 3 4 5 6 7 9 10 15 30
+Output 1 :
+1 Fizz 4 Buzz Fizz 7 Fizz Buzz FizzBuzz FizzBuzz 
+Input 2 :
+10
+1 2 4 17 7 8 11 13 14 16
+Output 2 :
+1 2 4 17 7 8 11 13 14 16 
  */
+    
